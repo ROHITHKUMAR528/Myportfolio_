@@ -1,75 +1,45 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Github, ExternalLink, ArrowUpRight, ArrowDown } from 'lucide-react';
-import documindImg from '../assets/documind.png';
-import newsDigestImg from '../assets/news_digest.png';
-import diabetesPredictorImg from '../assets/diabetes_predictor.png';
-import landchatImg from '../assets/landchat.jpeg';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Github, ArrowUpRight, ArrowDown } from 'lucide-react';
+import marketZenImg from '../assets/market-zen.png';
+import resumeCopilotImg from '../assets/ai-resume-copilot.png';
 
 const projects = [
     {
-        title: "DocuMind AI: Enterprise RAG Platform",
-        description: "An end-to-end full-stack Retrieval-Augmented Generation (RAG) platform that transforms how organizations interact with their data.",
+        title: "Market Zen: AI-Powered Skincare E-Commerce",
+        description: "A full-stack MERN skincare commerce platform with AI-assisted skin analysis, product search, and personalized routine recommendations.",
         details: [
-            "Achieved sub-second retrieval latency using ChromaDB vector store.",
-            "Integrated Groq API for lightning-fast LLM responses.",
-            "Features secure document management and interactive chat interface.",
-            "Implemented smart chunking and PDF parsing with LangChain."
+            "Built 10+ core features including product catalog, cart, order management, and checkout.",
+            "Integrated Google Gemini AI for skin image analysis, smart search, and personalized recommendations.",
+            "Implemented secure JWT, Google OAuth 2.0, and OTP-based email verification with Resend API.",
+            "Added Razorpay payments and deployed frontend/backend through Vercel and Render."
         ],
-        tags: ["FastAPI", "React", "LangChain", "ChromaDB", "Groq API"],
-        link: "https://github.com/Ajay-Pothula/DocuMind-RAG-Platform",
-        liveLink: null,
-        date: "March 2026",
-        image: documindImg
+        tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "Razorpay"],
+        link: "https://github.com/ROHITHKUMAR528/MarketZen-AI-Powered-Ecommerce",
+        liveLink: "https://market-zen-ai-powered-ecommerce.vercel.app/",
+        date: "Dec 2025 - Mar 2026",
+        image: marketZenImg,
+        imagePosition: "center top"
     },
     {
-        title: "LandChat Connect: AI-Powered Real Estate",
-        description: "A comprehensive real estate platform specifically designed for land transactions with an AI-powered assistant.",
+        title: "AI Resume Copilot",
+        description: "An AI-powered resume intelligence platform for ATS match scoring, semantic skill gap analysis, and automated resume optimization.",
         details: [
-            "Integrated Gemini AI chatbot for specialized land property queries.",
-            "Real-time land valuation and property evaluation assistance.",
-            "Secure authentication and user-specific property management.",
-            "Responsive dashboard for seamless property browsing."
+            "Architected resume analysis workflows for ATS match scoring and role-specific optimization.",
+            "Built semantic matching with PostgreSQL pgvector and spaCy NLP for accurate skill comparison.",
+            "Integrated OpenAI GPT-4o for learning roadmaps, resume bullets, and interview questions.",
+            "Containerized backend services with Docker and deployed using Render Blueprints and Vercel."
         ],
-        tags: ["React", "Node.js", "MongoDB", "Gemini AI", "Supabase"],
-        link: "https://github.com/ajay-pothula",
-        liveLink: null,
-        date: "January 2026",
-        image: landchatImg
-    },
-    {
-        title: "AI-Powered Automated Daily News Digest",
-        description: "An automated intelligence system that curates and summarizes global news, saving readers hours of research daily.",
-        details: [
-            "Reduced reading time by 90% via Google Gemini AI summarization.",
-            "Automated gathering of top articles using FeedParser.",
-            "Smart filtering and JSON persistence for personalized news feeds.",
-            "Real-time updates with minimal resource consumption."
-        ],
-        tags: ["Python", "Gemini AI", "JSON", "FeedParser"],
-        link: "https://github.com/Ajay-Pothula/AI-Powered-Automated-Daily-News-Digest",
-        liveLink: null,
-        date: "October 2025",
-        image: newsDigestImg
-    },
-    {
-        title: "Diabetes Predictor",
-        description: "A clinical-grade machine learning application designed to assist in early diabetes risk detection.",
-        details: [
-            "Achieved 85% prediction accuracy across multiple test datasets.",
-            "Ensembled LR, Decision Tree, Random Forest, and XGBoost models.",
-            "Interactive dashboard built with Gradio for user-friendly testing.",
-            "Comprehensive EDA and feature engineering on medical data."
-        ],
-        tags: ["Python", "Scikit", "Pandas", "Gradio"],
-        link: "https://github.com/Ajay-Pothula/-Diabetes-Predictor-Health-Dataset-",
-        liveLink: null,
-        date: "September 2025",
-        image: diabetesPredictorImg
+        tags: ["React.js", "Vite", "FastAPI", "PostgreSQL", "Redis", "OpenAI API", "Docker"],
+        link: "https://github.com/ROHITHKUMAR528/AI-Resume-Copilot",
+        liveLink: "https://ai-resume-copilot-khaki.vercel.app/",
+        date: "Jan 2026 - Mar 2026",
+        image: resumeCopilotImg,
+        imagePosition: "center top"
     }
 ];
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project }) => {
     const [hovered, setHovered] = useState(false);
 
     return (
@@ -85,6 +55,7 @@ const ProjectCard = ({ project, index }) => {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                    style={{ objectPosition: project.imagePosition }}
                 />
             </div>
 
@@ -189,10 +160,9 @@ const Projects = () => {
         const updateRange = () => {
             // Mobile: Adjusted for 4 cards to prevent trailing gap
             if (window.innerWidth < 768) {
-                setScrollRange(["1%", "-72%"]);
+                setScrollRange(["1%", "-58%"]);
             } else {
-                // Desktop: -60% fits 4 projects perfectly in the horizontal track
-                setScrollRange(["1%", "-60%"]);
+                setScrollRange(["1%", "-42%"]);
             }
         };
 

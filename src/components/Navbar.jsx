@@ -52,7 +52,7 @@ const Navbar = ({ theme, toggleTheme }) => {
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-cream/90 dark:bg-dark-bg/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
             <div className="container flex justify-between items-center">
                 <a href="#home" className="text-2xl font-bold tracking-tighter text-brown dark:text-white transition-colors">
-                    PA<span className="text-beige dark:text-primary-cyan">.</span>
+                    RK<span className="text-beige dark:text-primary-cyan">.</span>
                 </a>
 
                 {/* Desktop Menu */}

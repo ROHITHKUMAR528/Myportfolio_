@@ -12,10 +12,10 @@ import SpotlightCard from './SpotlightCard';
 import TiltCard from './TiltCard';
 
 const skillsData = [
-    { category: "Languages", items: ["C", "C++", "Python", "Java", "JavaScript"] },
-    { category: "Frameworks & Libs", items: ["FastAPI", "React", "Node.js", "LangChain", "Flask", "Django", "Tailwind CSS"] },
-    { category: "Tools & DB", items: ["MySQL", "ChromaDB", "Git", "GitHub", "VS Code", "Jupyter Notebook", "Anaconda"] },
-    { category: "Soft Skills", items: ["Problem-Solving", "Team Player", "Critical Thinking", "Adaptability"] }
+    { category: "Web Development", items: ["Responsive Design", "CRUD Operations", "REST APIs", "DOM Manipulation", "Front-End Development", "Authentication Basics"] },
+    { category: "Languages", items: ["Java (OOP)", "Python", "C", "JavaScript", "HTML5", "CSS3"] },
+    { category: "Frameworks & DB", items: ["React.js", "Node.js", "Express.js", "Bootstrap", "MySQL", "MongoDB"] },
+    { category: "Tools & Soft Skills", items: ["Git", "GitHub", "Vercel", "Render", "Razorpay", "VS Code", "Problem-Solving", "Analytical Thinking", "Team Collaboration"] }
 ];
 
 // Utility function for wrapping logic
@@ -81,7 +81,6 @@ const Skills = ({ theme }) => {
         { src: "react.svg", label: "React" },
         { src: "tailwind-css.svg", label: "Tailwind" },
         { src: "python.svg", label: "Python" },
-        { src: "Flask.svg", label: "Flask" },
         { src: "sql.svg", label: "SQL" },
         { src: "js.svg", label: "JavaScript" },
         { src: "c.svg", label: "C/C++" },
@@ -106,7 +105,7 @@ const Skills = ({ theme }) => {
                 </motion.h2>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {skillsData.map((group, index) => (
+                    {skillsData.map((group) => (
                         <TiltCard key={group.category} className="h-full">
                             <SpotlightCard
                                 spotlightColor={spotlightColor}

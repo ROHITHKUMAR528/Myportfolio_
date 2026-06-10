@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import Hero from './Hero';
 import AboutMe from './AboutMe';
 import Skills from './Skills';
@@ -9,7 +9,6 @@ import Experience from './Experience';
 import Contact from './Contact';
 import Navbar from './Navbar';
 import CursorFollower from './CursorFollower';
-import leetcodeImg from '../assets/leetcode.png';
 
 const Home = ({ theme, toggleTheme }) => {
     return (
@@ -27,7 +26,7 @@ const Home = ({ theme, toggleTheme }) => {
                 <div className="container mx-auto px-12 md:px-32 flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="flex items-center gap-6">
                         <a
-                            href="https://github.com/ajay-pothula"
+                            href="https://github.com/ROHITHKUMAR528"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:scale-110 transition-transform hover:text-charcoal dark:hover:text-white"
@@ -36,7 +35,7 @@ const Home = ({ theme, toggleTheme }) => {
                             <Github size={24} />
                         </a>
                         <a
-                            href="https://linkedin.com/in/ajay-pothula"
+                            href="https://www.linkedin.com/in/rohith06717/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:scale-110 transition-transform hover:text-[#0077b5]"
@@ -45,17 +44,15 @@ const Home = ({ theme, toggleTheme }) => {
                             <Linkedin size={24} />
                         </a>
                         <a
-                            href="https://leetcode.com/u/Pothula_Ajay/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group hover:scale-110 transition-transform"
-                            aria-label="LeetCode"
+                            href="mailto:rohit06717@gmail.com"
+                            className="hover:scale-110 transition-transform hover:text-brown dark:hover:text-primary-cyan"
+                            aria-label="Email"
                         >
-                            <img src={leetcodeImg} alt="LeetCode" className="w-6 h-6 filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" />
+                            <Mail size={24} />
                         </a>
                     </div>
 
-                    <p className="text-sm font-medium">&copy; {new Date().getFullYear()} Pothula Ajay. All rights reserved.</p>
+                    <p className="text-sm font-medium">&copy; {new Date().getFullYear()} Godduvelagala Rohith Kumar. All rights reserved.</p>
                 </div>
             </footer>
         </>

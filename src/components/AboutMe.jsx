@@ -43,10 +43,10 @@ const AboutMe = () => {
 
                     <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                         <p>
-                            I’m <span className="font-semibold text-brown dark:text-primary-cyan">Pothula Ajay</span>, a 3rd-year Computer Science Engineering student and aspiring Machine Learning Engineer at Lovely Professional University, maintaining a CGPA of 8.77. I am deeply interested in coding and building solutions for real-world problems.
+                            I&apos;m <span className="font-semibold text-brown dark:text-primary-cyan">Godduvelagala Rohith Kumar</span>, a Computer Science Engineering student at Madanapalle Institute of Technology &amp; Science. I focus on building practical full-stack applications that combine clean interfaces, secure backend systems, and AI-powered user experiences.
                         </p>
                         <p>
-                            I build strong programming fundamentals through hands-on projects and certifications. I excel in collaborative environments and pride myself on my problem-solving abilities, teamwork, critical thinking, and adaptability.
+                            My work includes an AI-powered skincare e-commerce platform and an AI resume intelligence platform with semantic matching, resume optimization, and cloud deployment. I bring problem-solving, analytical thinking, team collaboration, management, and continuous learning into every project I build.
                         </p>
                     </div>
 

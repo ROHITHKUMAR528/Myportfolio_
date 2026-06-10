@@ -1,8 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Download, Mail, Github, Linkedin } from 'lucide-react';
-import Img from '../assets/my_pic.jpg';
-import leetcodeImg from '../assets/leetcode.png';
+import Img from '../assets/rohith-profile.jpg';
 
 const useTypewriter = (words, typingSpeed = 50, deletingSpeed = 30, pauseDuration = 1500) => {
     const [index, setIndex] = useState(0);
@@ -45,12 +44,12 @@ const useTypewriter = (words, typingSpeed = 50, deletingSpeed = 30, pauseDuratio
 };
 
 const TYPED_WORDS = [
-    "Machine Learning Engineer",
-    "Software Developer",
-    "AI Developer",
-    "Data Science Enthusiast",
+    "Full-Stack Developer",
+    "MERN Stack Developer",
+    "AI Application Developer",
+    "Java Developer",
     "Problem Solver",
-    "Tech Enthusiast"
+    "Continuous Learner"
 ];
 
 const Hero = ({ theme }) => {
@@ -61,9 +60,9 @@ const Hero = ({ theme }) => {
     const typedText = useTypewriter(TYPED_WORDS, 60, 60, 2000);
 
     const socialLinks = [
-        { icon: <Github size={24} className="text-[#333] dark:text-white" />, url: "https://github.com/ajay-pothula" },
-        { icon: <Linkedin size={24} className="text-[#0077b5]" />, url: "https://linkedin.com/in/ajay-pothula" },
-        { icon: <img src={leetcodeImg} alt="LeetCode" className="w-6 h-6" />, url: "https://leetcode.com/u/Pothula_Ajay/" }
+        { icon: <Github size={24} className="text-[#333] dark:text-white" />, url: "https://github.com/ROHITHKUMAR528" },
+        { icon: <Linkedin size={24} className="text-[#0077b5]" />, url: "https://www.linkedin.com/in/rohith06717/" },
+        { icon: <Mail size={24} className="text-brown dark:text-primary-cyan" />, url: "mailto:rohit06717@gmail.com" }
     ];
 
     // Global listener for orbital border glow
@@ -145,9 +144,9 @@ const Hero = ({ theme }) => {
                         HELLO, I'M
                     </motion.span>
                     <h1 className="text-xl sm:text-3xl md:text-7xl font-extrabold text-charcoal dark:text-white mt-1 md:mt-4 mb-2 md:mb-4 leading-tight">
-                        Pothula{" "}
+                        Rohith{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brown to-light-brown dark:from-primary-cyan dark:to-cyan-600">
-                            Ajay
+                            Kumar
                         </span>
                     </h1>
 
@@ -159,7 +158,7 @@ const Hero = ({ theme }) => {
                     </div>
 
                     <p className="hidden md:block text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl leading-relaxed">
-                        A passionate Computer Science Engineering student dedicated to crafting intelligent, data-driven solutions. Specializing in Machine Learning and Software Development, I bridge the gap between complex algorithms and real-world applications to build impactful technology.
+                        A Computer Science Engineering student building full-stack, AI-powered applications with React, Node.js, FastAPI, MongoDB, PostgreSQL, and modern cloud deployment workflows.
                     </p>
 
                     <div className="flex flex-col md:flex-row gap-2 md:gap-4 mt-1 md:mt-8 items-center md:items-start w-fit">
@@ -226,8 +225,8 @@ const Hero = ({ theme }) => {
 
                             <img
                                 src={Img}
-                                alt="Pothula Ajay"
-                                className="w-full h-full object-cover rounded-full border-2 md:border-4 border-white/50 dark:border-primary-cyan/30 shadow-lg md:shadow-2xl relative z-10"
+                                alt="Godduvelagala Rohith Kumar"
+                                className="w-full h-full object-cover object-[50%_42%] rounded-full border-2 md:border-4 border-white/50 dark:border-primary-cyan/30 shadow-lg md:shadow-2xl relative z-10"
                                 style={{
                                     boxShadow: theme === 'dark'
                                         ? '0 0 40px rgba(0, 240, 255, 0.2)'
@@ -238,7 +237,7 @@ const Hero = ({ theme }) => {
 
                     {/* Social Links & Role Badge - Positioned below the image, separated from image hover */}
                     <div className="flex flex-col items-center gap-4 mt-4 md:mt-6 z-20">
-                            {/* Machine Learning Engineer Badge */}
+                            {/* Role Badge */}
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{
@@ -253,7 +252,7 @@ const Hero = ({ theme }) => {
                                 className="bg-white/40 dark:bg-white/5 backdrop-blur-xl px-4 py-1.5 md:px-6 md:py-2 rounded-xl border border-brown/10 dark:border-white/10 shadow-xl whitespace-nowrap"
                             >
                                 <span className="text-[10px] md:text-sm font-bold text-brown dark:text-primary-cyan uppercase tracking-wider">
-                                    Machine Learning Engineer
+                                    Full-Stack AI Developer
                                 </span>
                             </motion.div>
 

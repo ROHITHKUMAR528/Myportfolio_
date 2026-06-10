@@ -7,21 +7,21 @@ const Achievements = ({ theme }) => {
     const achievements = [
         {
             icon: <Code className="w-8 h-8" />,
-            title: "Competitive Programming",
-            description: "Solved 450+ problems across leading platforms including LeetCode, HackerRank, and GeeksforGeeks.",
-            date: "Ongoing"
+            title: "AI Commerce Platform",
+            description: "Built Market Zen with 10+ e-commerce features, AI skincare analysis, personalized recommendations, secure auth, and Razorpay payments.",
+            date: "Dec 2025 - Mar 2026"
         },
         {
             icon: <Award className="w-8 h-8" />,
-            title: "Research Incentive",
-            description: "Received research incentive for university approved patent: 'SMART BLIND SHOE WITH INTEGRATED HAND BAND USING ARDUINO'.",
-            date: "March 2024"
+            title: "Resume Intelligence System",
+            description: "Created AI Resume Copilot with ATS scoring, semantic skill gap analysis, GPT-4o resume optimization, Docker, and cloud deployment.",
+            date: "Jan 2026 - Mar 2026"
         },
         {
             icon: <Trophy className="w-8 h-8" />,
-            title: "Top 10 Teams - Hackathon",
-            description: "Secured a position in the Top 10 teams (out of 50+) in HackWithVertos 1.0, a 24-Hour Hackathon.",
-            date: "February 2024"
+            title: "Unity 3D Training",
+            description: "Completed hands-on game design training covering Unity 3D, C# scripting, animations, physics, UI design, debugging, and testing.",
+            date: "Aug 2024 - Sep 2024"
         }
     ];
 

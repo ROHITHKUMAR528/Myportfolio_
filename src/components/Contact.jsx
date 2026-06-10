@@ -27,7 +27,7 @@ const Contact = ({ theme }) => {
                 "template_lirja9e", // User's Template ID
                 {
                     from_name: form.name,
-                    to_name: "Ajay",
+                    to_name: "Rohith",
                     from_email: form.email,
                     message: form.message,
                 },
@@ -71,23 +71,23 @@ const Contact = ({ theme }) => {
 
                         {/* Contact Info (Floating) */}
                         <div className="flex-1 space-y-8" style={{ transform: "translateZ(20px)" }}>
-                            <a href="https://wa.me/916303620044" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-gray-600 dark:text-gray-300 transition-colors cursor-pointer">
+                            <a href="https://wa.me/916300679794" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-gray-600 dark:text-gray-300 transition-colors cursor-pointer">
                                 <div className="w-12 h-12 rounded-lg bg-brown/10 dark:bg-primary-cyan/10 flex items-center justify-center text-brown dark:text-primary-cyan group-hover:scale-110 group-hover:shadow-lg transition-all">
                                     <Phone size={20} />
                                 </div>
-                                <span className="font-medium tracking-wide">+91 6303620044</span>
+                                <span className="font-medium tracking-wide">+91 6300679794</span>
                             </a>
-                            <a href="mailto:ajaypothula125@gmail.com" className="group flex items-center gap-4 text-gray-600 dark:text-gray-300 transition-colors cursor-pointer">
+                            <a href="mailto:rohit06717@gmail.com" className="group flex items-center gap-4 text-gray-600 dark:text-gray-300 transition-colors cursor-pointer">
                                 <div className="w-12 h-12 rounded-lg bg-brown/10 dark:bg-primary-cyan/10 flex items-center justify-center text-brown dark:text-primary-cyan group-hover:scale-110 group-hover:shadow-lg transition-all">
                                     <Mail size={20} />
                                 </div>
-                                <span className="font-medium tracking-wide">ajaypothula125@gmail.com</span>
+                                <span className="font-medium tracking-wide">rohit06717@gmail.com</span>
                             </a>
-                            <a href="https://maps.app.goo.gl/wkKWd26P33Eu432e9" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-gray-600 dark:text-gray-300 transition-colors cursor-pointer">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Madanapalle%2C%20Andhra%20Pradesh%20515326" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-gray-600 dark:text-gray-300 transition-colors cursor-pointer">
                                 <div className="w-12 h-12 rounded-lg bg-brown/10 dark:bg-primary-cyan/10 flex items-center justify-center text-brown dark:text-primary-cyan group-hover:scale-110 group-hover:shadow-lg transition-all">
                                     <MapPin size={20} />
                                 </div>
-                                <span className="font-medium tracking-wide">Narsapur, Andhra Pradesh, India</span>
+                                <span className="font-medium tracking-wide">Madanapalle, Andhra Pradesh 515326</span>
                             </a>
                         </div>
 

@@ -2,10 +2,12 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { GraduationCap, School, Award, BookOpen, Briefcase } from 'lucide-react';
 import SpotlightCard from './SpotlightCard';
-import oracleAI from '../assets/oracle_AI.png';
-import googlePy from '../assets/google_py.png';
-import nptelCloud from '../assets/nptel_cloud.png';
-import commCert from '../assets/comm.png';
+import oracleAI from '../assets/oracle-ai-foundations.jpg';
+import awsCloud from '../assets/aws-cloud-practitioner.jpg';
+import claude101 from '../assets/claude-101.jpg';
+import advancedJava from '../assets/advanced-data-structures-java.jpg';
+import mernStack from '../assets/mern-stack-development.jpg';
+import quantumFundamentals from '../assets/quantum-fundamentals.png';
 
 const EducationIcon = ({ progress, index, total, theme, icon }) => {
     // Calculate the point at which this specific icon should be "active"
@@ -65,56 +67,70 @@ const Experience = ({ theme }) => {
 
     const education = [
         {
-            period: "Aug 2023 - Present",
-            title: "B.Tech in Computer Science & Engineering",
-            institution: "Lovely Professional University, Punjab",
-            score: "CGPA: 8.75",
+            period: "2023 - 2027",
+            title: "BTech in Computer Science and Engineering",
+            institution: "Madanapalle Institute of Technology & Science",
+            score: "Madanapalle, Angallu",
             icon: <GraduationCap className="w-6 h-6" />
         },
         {
-            period: "Aug 2021 - May 2023",
-            title: "Intermediate (MPC)",
-            institution: "Sri Chaitanya Junior College, Palakol",
-            score: "Percentage: 96.5%",
+            period: "2021 - 2022",
+            title: "Intermediate (PCM)",
+            institution: "Sri Siddartha Junior College",
+            score: "Percentage: 85.3%",
             icon: <School className="w-6 h-6" />
         },
         {
-            period: "Aug 2020 - Jun 2021",
-            title: "SSC (10th Standard)",
-            institution: "Aditya School, Narsapur",
-            score: "Percentage: 98%",
+            period: "2020 - 2021",
+            title: "Matriculation",
+            institution: "Govt Boys High School",
+            score: "Percentage: 97%",
             icon: <BookOpen className="w-6 h-6" />
         }
     ];
 
     const certifications = [
         {
-            date: "Mar 2026",
-            title: "The Science of Well Being",
-            provider: "Coursera",
-            image: commCert,
-            link: "https://drive.google.com/file/d/1bK_1HnVtBUPW8pe6C_ReBCAC0oVuVKk7/view?usp=sharing"
-        },
-        {
-            date: "Sep 2025",
+            date: "Oct 2025",
             title: "Oracle Cloud Infrastructure 2025 AI Foundations Associate",
             provider: "Oracle University",
             image: oracleAI,
-            link: "https://drive.google.com/file/d/1uR61bTJ5D-RhBZhQTK7Ub8iaVJfdxpYY/view?usp=sharing"
+            link: "https://drive.google.com/file/d/148fRlbNPob-D6iDRa5mmRZE9TLO7ULDt/view?usp=sharing"
         },
         {
-            date: "Apr 2025",
-            title: "Cloud Computing",
-            provider: "NPTEL",
-            image: nptelCloud,
-            link: "https://drive.google.com/file/d/1mVgE-syUCibmPrZzCPCPiuvjzSa_EgyC/view?usp=sharing"
+            date: "Jun 2026",
+            title: "AWS Cloud Practitioner Essentials",
+            provider: "AWS Training & Certification",
+            image: awsCloud,
+            link: "https://drive.google.com/file/d/1YfwNCcNQysvPpSQ1_Jtp0302sLg95z9m/view?usp=sharing"
         },
         {
-            date: "Aug 2024",
-            title: "Crash Course on Python",
-            provider: "Google (via Coursera)",
-            image: googlePy,
-            link: "https://drive.google.com/file/d/163I2WWmYJOouoWYdhksjEzYAsSfMPLBB/view?usp=sharing"
+            date: "2026",
+            title: "Claude 101",
+            provider: "Anthropic",
+            image: claude101,
+            link: "https://drive.google.com/file/d/1IrHgimMSjgqqYoIvZ8SrdgNU-j_zJdxU/view?usp=sharing"
+        },
+        {
+            date: "Jan - Feb 2026",
+            title: "Advanced Data Structures using Java",
+            provider: "Department of Computer Science & Engineering, MITS",
+            image: advancedJava,
+            link: "https://drive.google.com/file/d/1CToiHxYlVaYyum9T54ghcMFDlNAhLHqB/view?usp=sharing"
+        },
+        {
+            date: "Feb - Mar 2026",
+            title: "MERN Stack Development",
+            provider: "Department of Computer Science & Engineering, MITS",
+            image: mernStack,
+            link: "https://drive.google.com/file/d/1dv8vU0EHLmt-yGBGo2Uh9PyMk5diW-lg/view?usp=sharing"
+        },
+        {
+            date: "Feb 2026",
+            title: "Quantum Fundamentals",
+            provider: "Amaravati Quantum Valley, Qubitech & WISER",
+            image: quantumFundamentals,
+            link: "https://drive.google.com/file/d/1B-P-TDJOhVsvu0PEHxvvEaw6GCxVhpKY/view?usp=sharing"
         }
     ];
 
@@ -148,35 +164,27 @@ const Experience = ({ theme }) => {
                                 spotlightColor={theme === 'light' ? "rgba(180, 140, 90, 0.2)" : "rgba(0, 255, 136, 0.1)"}
                                 className="p-8 rounded-2xl bg-white/50 dark:bg-white/5 border border-brown/10 dark:border-white/10"
                             >
-                                <span className="text-sm font-bold text-brown dark:text-primary-cyan uppercase tracking-widest">Jun 2025 - Jul 2025</span>
-                                <h4 className="text-2xl font-bold text-charcoal dark:text-white mt-2">Guide to Machine Learning with Data Science</h4>
+                                <span className="text-sm font-bold text-brown dark:text-primary-cyan uppercase tracking-widest">Aug 2024 - Sep 2024</span>
+                                <h4 className="text-2xl font-bold text-charcoal dark:text-white mt-2">Game Design Using Unity 3D</h4>
                                 <div className="flex items-center gap-4">
-                                    <p className="text-lg font-medium text-brown/80 dark:text-gray-300">Cipher Schools (Edtech Company)</p>
-                                    <a
-                                        href="https://www.cipherschools.com/certificate/preview?id=687e69327efd6d50907040aa"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-xs font-bold text-brown dark:text-primary-cyan hover:underline ml-4"
-                                    >
-                                        View Certificate
-                                    </a>
+                                    <p className="text-lg font-medium text-brown/80 dark:text-gray-300">APSSDC & Madanapalle Institute of Technology & Science</p>
                                 </div>
                                 <ul className="mt-6 grid md:grid-cols-2 gap-4 text-gray-700 dark:text-gray-400">
                                     <li className="flex gap-3">
                                         <span className="w-1.5 h-1.5 rounded-full bg-brown/50 dark:bg-primary-cyan/50 mt-2 flex-shrink-0" />
-                                        Performed EDA using NumPy and Pandas, optimized preprocessing.
+                                        Learned game development fundamentals using Unity 3D and C# scripting.
                                     </li>
                                     <li className="flex gap-3">
                                         <span className="w-1.5 h-1.5 rounded-full bg-brown/50 dark:bg-primary-cyan/50 mt-2 flex-shrink-0" />
-                                        Hands-on training in ML fundamentals and feature engineering.
+                                        Designed basic 2D/3D environments with character movement and object interactions.
                                     </li>
                                     <li className="flex gap-3">
                                         <span className="w-1.5 h-1.5 rounded-full bg-brown/50 dark:bg-primary-cyan/50 mt-2 flex-shrink-0" />
-                                        Built models using LR, KNN, SVM, Decision Trees, and K-Means.
+                                        Implemented assets, animations, physics components, and UI elements.
                                     </li>
                                     <li className="flex gap-3">
                                         <span className="w-1.5 h-1.5 rounded-full bg-brown/50 dark:bg-primary-cyan/50 mt-2 flex-shrink-0" />
-                                        Implemented real-world projects applying supervised and unsupervised learning techniques to derive actionable insights.
+                                        Gained hands-on experience with scene management, debugging, and game testing.
                                     </li>
                                 </ul>
                             </SpotlightCard>
@@ -264,20 +272,19 @@ const Experience = ({ theme }) => {
                                         whileHover={{ y: -5 }}
                                         className="group relative h-72 rounded-[2rem] bg-white dark:bg-white/5 border border-brown/40 dark:border-white/10 hover:border-brown dark:hover:border-primary-cyan transition-all p-10 flex flex-col justify-between overflow-hidden shadow-xl hover:shadow-2xl"
                                     >
-                                        {/* Certificate Image Overlay - Layered BELOW Text */}
-                                        <div className="absolute inset-x-0 inset-y-0 z-0 overflow-hidden pointer-events-none">
+                                        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                                             <motion.div
                                                 className="absolute -right-12 top-1/2 -translate-y-1/2 w-[80%] h-[70%] opacity-0 group-hover:opacity-40 group-hover:-rotate-6 translate-x-24 group-hover:translate-x-0 transition-all duration-1000 blur-[1px] group-hover:blur-0"
                                                 style={{
-                                                    backgroundImage: `url(${cert.image || 'https://images.unsplash.com/photo-1513258496099-48168024adb0?q=80&w=2070&auto=format&fit=crop'})`,
+                                                    backgroundImage: `url(${cert.image})`,
                                                     backgroundSize: 'cover',
                                                     backgroundPosition: 'top',
+                                                    backgroundRepeat: 'no-repeat',
                                                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
                                                 }}
                                             />
                                         </div>
 
-                                        {/* Text Info - Layered ABOVE Image */}
                                         <div className="relative z-20 max-w-[75%] transition-transform duration-500 group-hover:translate-x-2">
                                             <div className="flex items-center gap-3 mb-4">
                                                 <div className="w-2 h-2 rounded-full bg-brown dark:bg-primary-cyan animate-pulse shadow-[0_0_10px_rgba(0,240,255,0.5)]" />
@@ -289,16 +296,18 @@ const Experience = ({ theme }) => {
                                             <p className="text-sm font-medium text-gray-700 dark:text-gray-400 mt-4 backdrop-blur-[2px] inline-block py-1 rounded-lg">{cert.provider}</p>
                                         </div>
 
-                                        {/* Verify Button - Layered on TOP-most level */}
                                         <div className="relative z-30 flex justify-between items-end">
                                             <div className="p-4 rounded-2xl bg-brown/10 dark:bg-primary-cyan/10 text-brown dark:text-primary-cyan group-hover:bg-brown dark:group-hover:bg-primary-cyan group-hover:text-white dark:group-hover:text-black transition-all shadow-lg border border-brown/20 dark:border-primary-cyan/20">
                                                 <Award className="w-6 h-6" />
                                             </div>
-                                            <motion.a 
+                                            <motion.a
                                                 href={cert.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                whileHover={{ scale: 1.05, backgroundColor: theme === 'dark' ? '#000000' : 'rgba(180, 140, 90, 0.1)' }}
+                                                whileHover={{
+                                                    scale: 1.05,
+                                                    backgroundColor: theme === 'dark' ? '#000000' : 'rgba(180, 140, 90, 0.1)'
+                                                }}
                                                 className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-brown dark:border-primary-cyan text-brown dark:text-primary-cyan opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 shadow-[0_0_20px_rgba(0,240,255,0.1)] font-bold text-[11px] bg-transparent cursor-pointer no-underline"
                                             >
                                                 Verify Credential
