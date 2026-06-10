@@ -144,9 +144,9 @@ const Hero = ({ theme }) => {
                         HELLO, I'M
                     </motion.span>
                     <h1 className="text-xl sm:text-3xl md:text-7xl font-extrabold text-charcoal dark:text-white mt-1 md:mt-4 mb-2 md:mb-4 leading-tight">
-                        Rohith{" "}
+                        ROHITH{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brown to-light-brown dark:from-primary-cyan dark:to-cyan-600">
-                            Kumar
+                            KUMAR
                         </span>
                     </h1>
 

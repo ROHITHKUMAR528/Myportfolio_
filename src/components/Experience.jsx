@@ -70,12 +70,12 @@ const Experience = ({ theme }) => {
             period: "2023 - 2027",
             title: "BTech in Computer Science and Engineering",
             institution: "Madanapalle Institute of Technology & Science",
-            score: "Madanapalle, Angallu",
+            score: "Ongoing: 7.85 CGPA",
             icon: <GraduationCap className="w-6 h-6" />
         },
         {
             period: "2021 - 2022",
-            title: "Intermediate (PCM)",
+            title: "Intermediate (IPE)",
             institution: "Sri Siddartha Junior College",
             score: "Percentage: 85.3%",
             icon: <School className="w-6 h-6" />
