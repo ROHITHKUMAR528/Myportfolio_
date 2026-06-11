@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { GraduationCap, School, Award, BookOpen, Briefcase } from 'lucide-react';
 import SpotlightCard from './SpotlightCard';
 import oracleAI from '../assets/oracle-ai-foundations.jpg';
+import deloitteDataAnalytics from '../assets/deloitte-data-analytics.jpg';
 import awsCloud from '../assets/aws-cloud-practitioner.jpg';
 import claude101 from '../assets/claude-101.jpg';
 import advancedJava from '../assets/advanced-data-structures-java.jpg';
@@ -96,6 +97,13 @@ const Experience = ({ theme }) => {
             provider: "Oracle University",
             image: oracleAI,
             link: "https://drive.google.com/file/d/148fRlbNPob-D6iDRa5mmRZE9TLO7ULDt/view?usp=sharing"
+        },
+        {
+            date: "Jun 2026",
+            title: "Data Analytics Job Simulation",
+            provider: "Deloitte (via Forage)",
+            image: deloitteDataAnalytics,
+            link: "https://drive.google.com/file/d/1xjhLh6HW8em_DC-U9lO50se-AHfDIFj5/view?usp=sharing"
         },
         {
             date: "Jun 2026",
