@@ -173,10 +173,10 @@ const Hero = ({ theme }) => {
                             <span className="md:hidden">Contact</span>
                         </motion.a>
                         <motion.a
-                            href="/My_Portfolio/resume.pdf"
+                            href="./resume.docx"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            download
+                            download="Rohith_Kumar_Resume.docx"
                             className="border-2 border-charcoal dark:border-primary-cyan text-charcoal dark:text-primary-cyan px-3 py-1.5 md:px-8 md:py-3 rounded-full flex items-center justify-center gap-2 font-medium text-[10px] md:text-base hover:bg-charcoal hover:text-white dark:hover:bg-primary-cyan/10 transition-all w-fit"
                         >
                             <Download size={12} className="md:w-[18px] md:h-[18px]" />
