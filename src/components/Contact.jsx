@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import TiltCard from "./TiltCard";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
-import emailjs from "@emailjs/browser";
+
+const CONTACT_EMAIL = "rohit06717@gmail.com";
 
 // Simplified inline background component to replace StarsCanvas if desired, or just use CSS
 const CyberGrid = () => (
@@ -21,32 +22,31 @@ const Contact = ({ theme }) => {
         e.preventDefault();
         setLoading(true);
 
-        emailjs
-            .send(
-                "service_3p4h3j9", // New Service ID
-                "template_lirja9e", // User's Template ID
-                {
-                    from_name: form.name,
-                    to_name: "Rohith",
-                    from_email: form.email,
-                    message: form.message,
-                },
-                {
-                    publicKey: "aIHSfYtEtwgOiCCeh", // User's Public Key Options style
-                }
-            )
-            .then(
-                () => {
-                    setLoading(false);
-                    alert("Thank you. I will get back to you as soon as possible.");
-                    setForm({ name: "", email: "", message: "" });
-                },
-                (error) => {
-                    setLoading(false);
-                    console.error("FAILED...", error);
-                    alert(`Something went wrong: ${error.text || error.message || 'Unknown error'}. Please try again.`);
-                }
-            );
+        const visitorName = form.name.trim();
+        const visitorEmail = form.email.trim();
+        const visitorMessage = form.message.trim();
+        const subject = `Portfolio message from ${visitorName || "Visitor"}`;
+        const body = [
+            `Name: ${visitorName}`,
+            `Email: ${visitorEmail}`,
+            "",
+            "Message:",
+            visitorMessage,
+        ].join("\n");
+
+        const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_EMAIL)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const draftWindow = window.open(gmailComposeUrl, "_blank", "noopener,noreferrer");
+
+        if (!draftWindow) {
+            window.location.href = mailtoUrl;
+        }
+
+        setLoading(false);
+        setForm({ name: "", email: "", message: "" });
+        window.setTimeout(() => {
+            alert("Your email draft is ready. Please press Send so it reaches my Gmail inbox.");
+        }, 0);
     };
 
     return (
@@ -77,11 +77,11 @@ const Contact = ({ theme }) => {
                                 </div>
                                 <span className="font-medium tracking-wide">+91 6300679794</span>
                             </a>
-                            <a href="mailto:rohit06717@gmail.com" className="group flex items-center gap-4 text-gray-600 dark:text-gray-300 transition-colors cursor-pointer">
+                            <a href={`mailto:${CONTACT_EMAIL}`} className="group flex items-center gap-4 text-gray-600 dark:text-gray-300 transition-colors cursor-pointer">
                                 <div className="w-12 h-12 rounded-lg bg-brown/10 dark:bg-primary-cyan/10 flex items-center justify-center text-brown dark:text-primary-cyan group-hover:scale-110 group-hover:shadow-lg transition-all">
                                     <Mail size={20} />
                                 </div>
-                                <span className="font-medium tracking-wide">rohit06717@gmail.com</span>
+                                <span className="font-medium tracking-wide">{CONTACT_EMAIL}</span>
                             </a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Madanapalle%2C%20Andhra%20Pradesh%20515326" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-gray-600 dark:text-gray-300 transition-colors cursor-pointer">
                                 <div className="w-12 h-12 rounded-lg bg-brown/10 dark:bg-primary-cyan/10 flex items-center justify-center text-brown dark:text-primary-cyan group-hover:scale-110 group-hover:shadow-lg transition-all">
@@ -133,11 +133,14 @@ const Contact = ({ theme }) => {
                             </div>
 
                             <motion.button
+                                type="submit"
+                                disabled={loading}
+                                aria-busy={loading}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="w-full bg-brown dark:bg-primary-cyan text-white dark:text-black font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-light-brown dark:hover:bg-cyan-400 hover:shadow-lg transition-all"
+                                className={`w-full bg-brown dark:bg-primary-cyan text-white dark:text-black font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-light-brown dark:hover:bg-cyan-400 hover:shadow-lg transition-all ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
                             >
-                                Send Message <Send size={20} />
+                                {loading ? "Sending..." : "Send Message"} <Send size={20} />
                             </motion.button>
                         </form>
                     </div>
