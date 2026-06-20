@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import TiltCard from "./TiltCard";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const CONTACT_EMAIL = "rohit06717@gmail.com";
+const EMAILJS_SERVICE_ID = "service_k8mxscs";
+const EMAILJS_TEMPLATE_ID = "template_bnln5d2";
+const EMAILJS_PUBLIC_KEY = "gyhjfbDnJf73dGBXH";
 
 // Simplified inline background component to replace StarsCanvas if desired, or just use CSS
 const CyberGrid = () => (
@@ -18,35 +22,58 @@ const Contact = ({ theme }) => {
 
     const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-    const handleSubmit = (e) => {
+    const getSubmitErrorMessage = (error) => {
+        const message = error?.text || error?.message || "Unknown error";
+        return `Message could not be sent. EmailJS error: ${message}`;
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
+        let alertMessage = "";
 
-        const visitorName = form.name.trim();
-        const visitorEmail = form.email.trim();
-        const visitorMessage = form.message.trim();
-        const subject = `Portfolio message from ${visitorName || "Visitor"}`;
-        const body = [
-            `Name: ${visitorName}`,
-            `Email: ${visitorEmail}`,
-            "",
-            "Message:",
-            visitorMessage,
-        ].join("\n");
+        try {
+            const visitorName = form.name.trim();
+            const visitorEmail = form.email.trim();
+            const visitorMessage = form.message.trim();
+            const subject = `Portfolio message from ${visitorName || "Visitor"}`;
+            const sentAt = new Intl.DateTimeFormat("en-IN", {
+                dateStyle: "medium",
+                timeStyle: "short",
+            }).format(new Date());
 
-        const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_EMAIL)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        const draftWindow = window.open(gmailComposeUrl, "_blank", "noopener,noreferrer");
+            await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                {
+                    to_name: "Rohith",
+                    to_email: CONTACT_EMAIL,
+                    recipient_email: CONTACT_EMAIL,
+                    email: CONTACT_EMAIL,
+                    subject,
+                    from_name: visitorName,
+                    from_email: visitorEmail,
+                    reply_to: visitorEmail,
+                    visitor_email: visitorEmail,
+                    sender_email: visitorEmail,
+                    message: visitorMessage,
+                    sent_at: sentAt,
+                    site_name: "Portfolio Site",
+                },
+                {
+                    publicKey: EMAILJS_PUBLIC_KEY,
+                }
+            );
 
-        if (!draftWindow) {
-            window.location.href = mailtoUrl;
+            alertMessage = "Thank you. Your message was sent successfully.";
+            setForm({ name: "", email: "", message: "" });
+        } catch (error) {
+            console.error("EmailJS contact form failed:", error);
+            alertMessage = getSubmitErrorMessage(error);
+        } finally {
+            setLoading(false);
+            window.setTimeout(() => alert(alertMessage), 0);
         }
-
-        setLoading(false);
-        setForm({ name: "", email: "", message: "" });
-        window.setTimeout(() => {
-            alert("Your email draft is ready. Please press Send so it reaches my Gmail inbox.");
-        }, 0);
     };
 
     return (
